@@ -1,0 +1,11 @@
+{
+  "name": "claude-code-voice",
+  "version": "1.0.0",
+  "description": "Give Claude Code a voice — automatic text-to-speech for every response using Microsoft Edge neural TTS. Free, no API key, natural-sounding.",
+  "author": {
+    "name": "Inves",
+    "url": "https://github.com/Inves"
+  },
+  "license": "MIT",
+  "keywords": ["tts", "voice", "speech", "edge-tts", "audio", "text-to-speech", "accessibility"]
+}
