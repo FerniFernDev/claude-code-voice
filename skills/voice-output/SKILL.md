@@ -19,15 +19,22 @@ pip install edge-tts pygame
 
 Verify: `python -c "import edge_tts; import pygame; print('OK')"`
 
-If `python` doesn't work, try `python3`. If neither works, find the user's Python path and use that.
+If `python` doesn't work, try `python3`.
 
-Then test the bundled TTS script:
+**For fastest playback**, the user should also have `ffplay` (comes with ffmpeg):
+- **Windows:** `winget install ffmpeg` or `choco install ffmpeg`
+- **macOS:** `brew install ffmpeg`
+- **Linux:** `sudo apt install ffmpeg`
+
+If ffplay isn't available, the script falls back to pygame automatically (slightly slower startup).
+
+Then test:
 
 ```bash
 python "${CLAUDE_PLUGIN_ROOT}/scripts/claude_tts.py" "Voice output is active. You should hear this."
 ```
 
-If the user hears audio, setup is complete. The Stop hook is already configured by the plugin — no manual settings.json edits needed.
+If the user hears audio, setup is complete. The Stop hook is already configured by the plugin.
 
 ## Changing Voice
 
@@ -54,12 +61,13 @@ Edit `${CLAUDE_PLUGIN_ROOT}/scripts/claude_tts.py`:
 
 ## Troubleshooting
 
-- **No sound after response:** Run `python "${CLAUDE_PLUGIN_ROOT}/scripts/claude_tts.py" "test"` manually to check TTS works standalone
+- **No sound:** Run `python "${CLAUDE_PLUGIN_ROOT}/scripts/claude_tts.py" "test"` manually
+- **Slow startup:** Install ffmpeg for streaming playback (see setup above)
 - **Linux audio issues:** `sudo apt install libsdl2-mixer-2.0-0`
 - **macOS audio issues:** `brew install sdl2 sdl2_mixer` then reinstall pygame
-- **Hook not firing:** Check the plugin is enabled in `/plugins` menu. The hook is in `${CLAUDE_PLUGIN_ROOT}/hooks/hooks.json`
+- **Hook not firing:** Check the plugin is enabled in `/plugins` menu
 - **Wrong Python:** The hook uses `python` — if your system needs `python3`, edit `hooks/hooks.json`
 
 ## Disabling
 
-Disable the plugin in Claude Code's `/plugins` menu, or set `"disableAllHooks": true` in settings.json temporarily.
+Disable the plugin in Claude Code's `/plugins` menu, or set `"disableAllHooks": true` in settings.json.
