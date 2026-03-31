@@ -93,7 +93,13 @@ def speak_pygame(text):
 
 
 def get_text():
-    """Get text from CLI args or stdin."""
+    """Get text from --file path, CLI args, or stdin."""
+    if len(sys.argv) > 2 and sys.argv[1] == "--file":
+        try:
+            with open(sys.argv[2], "r", encoding="utf-8") as f:
+                return f.read()
+        except (OSError, IOError):
+            return ""
     if len(sys.argv) > 1:
         return " ".join(sys.argv[1:])
     if not sys.stdin.isatty():
