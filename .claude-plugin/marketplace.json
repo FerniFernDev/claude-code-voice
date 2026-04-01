@@ -1,0 +1,15 @@
+{
+  "name": "claude-code-voice",
+  "owner": {
+    "name": "FerniFernDev",
+    "email": ""
+  },
+  "plugins": [
+    {
+      "name": "claude-code-voice",
+      "description": "Give Claude Code a voice — automatic text-to-speech for every response using Microsoft Edge neural TTS. Free, no API key, natural-sounding.",
+      "source": "./plugins/claude-code-voice",
+      "category": "productivity"
+    }
+  ]
+}
