@@ -1,11 +1,13 @@
 {
   "name": "claude-code-voice",
   "version": "1.0.0",
-  "description": "Give Claude Code a voice — automatic text-to-speech for every response using Microsoft Edge neural TTS. Free, no API key, natural-sounding.",
+  "description": "Give Claude Code a voice. Every response is spoken aloud using Microsoft Edge neural TTS — free, no API key, natural-sounding.",
   "author": {
-    "name": "Inves",
-    "url": "https://github.com/Inves"
+    "name": "FerniFernDev",
+    "url": "https://github.com/FerniFernDev"
   },
+  "homepage": "https://github.com/FerniFernDev/claude-code-voice",
+  "repository": "https://github.com/FerniFernDev/claude-code-voice",
   "license": "MIT",
-  "keywords": ["tts", "voice", "speech", "edge-tts", "audio", "text-to-speech", "accessibility"]
+  "keywords": ["voice", "tts", "text-to-speech", "audio", "speech", "edge-tts", "accessibility"]
 }
